@@ -56,7 +56,7 @@ public class SentiWordnet {
 
         BufferedReader csv = null;
         try {
-            csv = new BufferedReader(new FileReader(pathToSWN));
+            csv = new BufferedReader(new FileReader("C:\\BE_Project\\SentiWordNet.txt"));
             int lineNumber = 0;
 
             String line;
@@ -150,7 +150,7 @@ public class SentiWordnet {
 
     public static void main(String[] args) throws IOException {
 
-        String pathToSWN = "C:\\Rebecca\\BE_project\\12-2-2015\\SentiWordNet.txt";
+        String pathToSWN = "C:\\BE_project\\SentiWordNet.txt";
         SentiWordnet sentiwordnet = new SentiWordnet(pathToSWN);
 
         System.out.println("said#a " + sentiwordnet.extract("said", "a"));
