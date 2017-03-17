@@ -32,7 +32,7 @@ import edu.stanford.nlp.util.CoreMap;
 
 public class JExcelAPIDemo
 {
-    protected StanfordCoreNLP pipeline;
+    protected StanfordCoreNLP pipeline = new StanfordCoreNLP();
 
     JExcelAPIDemo(int id, String rev) throws Exception
     {

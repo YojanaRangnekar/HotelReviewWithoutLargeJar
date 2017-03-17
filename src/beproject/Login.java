@@ -1,61 +1,31 @@
 
 package beproject;
 
-import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Container;
-import java.awt.FileDialog;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.GridLayout;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.BoxLayout;
-import javax.swing.Icon;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
-import javax.swing.JOptionPane;
 
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
-
-import jxl.read.biff.BiffException;
-
 import jxl.write.Label;
-import jxl.write.Number;
-import jxl.write.WritableCell;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
-import jxl.write.WriteException;
 
 public class Login extends JFrame implements ActionListener {
 
@@ -88,14 +58,14 @@ public class Login extends JFrame implements ActionListener {
 
         Color backg = new Color(128, 0, 0);
 
+        
         c = getContentPane();
-
         JPanel jp_btn = new JPanel();
 
         title = new JLabel();
         title.setText("EpiCurious");
-        title.setFont(font_home);
         title.setForeground(text);
+        title.setFont(font_home);
         title.setBounds(500, 25, 500, 50);
 
         jp_btn.add(title);

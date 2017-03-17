@@ -45,18 +45,18 @@ import java.util.Map;
 
 public class SentiWordnet {
 
-    private Map<String, Double> dictionary;
+    private Map<String, Double> dict;
 
     public SentiWordnet(String pathToSWN) throws IOException {
         // This is our main dictionary representation
-        dictionary = new HashMap<String, Double>();
+        dict = new HashMap<String, Double>();
 
         // From String to list of doubles.
         HashMap<String, HashMap<Integer, Double>> tempDictionary = new HashMap<String, HashMap<Integer, Double>>();
 
         BufferedReader csv = null;
         try {
-            csv = new BufferedReader(new FileReader("C:\\BE_Project\\SentiWordNet.txt"));
+            csv = new BufferedReader(new FileReader(pathToSWN));
             int lineNumber = 0;
 
             String line;
@@ -131,7 +131,7 @@ public class SentiWordnet {
                 }
                 score /= sum;
 
-                dictionary.put(word, score);
+                dict.put(word, score);
             }
         }
         catch (Exception e) {
@@ -145,12 +145,12 @@ public class SentiWordnet {
     }
 
     public double extract(String word, String pos) {
-        return dictionary.get(word + "#" + pos);
+        return dict.getOrDefault(word + "#" + pos, 0.0);//.get(word + "#" + pos);
     }
 
     public static void main(String[] args) throws IOException {
 
-        String pathToSWN = "C:\\BE_project\\SentiWordNet.txt";
+        String pathToSWN = "resources/final_Lemmatized_Poptates-1.xls";
         SentiWordnet sentiwordnet = new SentiWordnet(pathToSWN);
 
         System.out.println("said#a " + sentiwordnet.extract("said", "a"));

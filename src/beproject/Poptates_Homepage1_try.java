@@ -217,9 +217,9 @@ public class Poptates_Homepage1_try extends JFrame implements ActionListener
 
                 File f = new File(str3);
                 FileReader fr = new FileReader(f);
-                BufferedReader in = new BufferedReader(fr);
+                BufferedReader inner = new BufferedReader(fr);
                 String line;
-                while ((line = in.readLine()) != null)
+                while ((line = inner.readLine()) != null)
                 {
                     str4 = str4 + line + "\n";
                 }
